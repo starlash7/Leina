@@ -11,8 +11,8 @@ const Layout = () => {
           <div className="flex items-center justify-between h-16">
             {/* Left side - Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/leina-logo.png" alt="Leina" className="w-8 h-8" />
-              <span className="text-lg font-medium">leina</span>
+              <img src="/Leina.png" alt="Leina" className="w-8 h-8" />
+              <span className="text-lg font-medium">Leina: Your Learning Partner</span>
             </Link>
 
             {/* Right side - Navigation */}

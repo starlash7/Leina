@@ -24,7 +24,7 @@ function App() {
                 {/* Avatar image placeholder */}
                 <div className="absolute inset-0 rounded-full overflow-hidden">
                   <img
-                    src="/leina-avatar.png"
+                    src="/Leina.png"
                     alt="Leina Avatar"
                     className="w-full h-full object-cover"
                   />
@@ -36,17 +36,17 @@ function App() {
           </div>
 
           {/* Title with gradient */}
-          <h1 className="text-7xl font-bold mb-8 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 text-transparent bg-clip-text tracking-tight">
-            hi, i'm leina
+          <h1 className="text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 via-yellow-400 to-green-400 text-transparent bg-clip-text tracking-tight">
+          Leina: Your Learning Partner
           </h1>
 
           {/* Subtitle with better spacing */}
           <div className="space-y-2 mb-16">
             <p className="text-xl text-gray-300">
-              leina is an AI tutor that helps you learn.
+              Leina is an AI tutor that helps you learn.
             </p>
             <p className="text-xl text-gray-300">
-              powered by ai, built for education.
+              powered by AI, built for education.
             </p>
           </div>
 

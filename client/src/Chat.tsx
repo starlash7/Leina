@@ -1,104 +1,98 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import "./App.css";
+import React from 'react';
 
-type TextResponse = {
-    text: string;
-    user: string;
+const Chat = () => {
+  return (
+    <div className="min-h-screen bg-[#0A0A0B] text-white">
+      {/* 채팅 헤더 */}
+      <div className="border-b border-gray-800/40 p-4">
+        <div className="max-w-4xl mx-auto flex items-center gap-4">
+          <img
+            src="/Leina.png"
+            alt="Jenna"
+            className="w-10 h-10 rounded-full border-2 border-purple-500"
+          />
+          <div>
+            <h1 className="text-lg font-bold flex items-center gap-2">
+              Leina
+              <span className="bg-purple-600/20 text-purple-400 px-2 py-0.5 rounded-full text-xs">
+                AI Agent
+              </span>
+            </h1>
+            <p className="text-sm text-gray-400">Online</p>
+          </div>
+        </div>
+      </div>
+
+      {/* 채팅 영역 */}
+      <div className="max-w-4xl mx-auto h-[calc(100vh-180px)] flex flex-col">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {/* AI 메시지 */}
+          <div className="flex gap-4">
+            <img
+              src="/Leina.png"
+              alt="Jenna"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="bg-[#111113] rounded-2xl p-4 max-w-[80%]">
+              <p className="text-gray-300">
+                Hi! I'm Leina, your Learning AI. How can I help you today?
+              </p>
+            </div>
+          </div>
+
+          {/* 사용자 메시지 */}
+          <div className="flex gap-4 justify-end">
+            <div className="bg-purple-600/20 rounded-2xl p-4 max-w-[80%]">
+              <p className="text-gray-300">
+                Tell me about your AI capabilities!
+              </p>
+            </div>
+          </div>
+
+          {/* AI 응답 */}
+          <div className="flex gap-4">
+            <img
+              src="/Leina.png"
+              alt="Jenna"
+              className="w-8 h-8 rounded-full"
+            />
+            <div className="bg-[#111113] rounded-2xl p-4 max-w-[80%]">
+              <p className="text-gray-300">
+                I specialize in three main areas:
+                <br/><br/>
+                1. Advanced natural language processing
+                <br/>
+                2. Real-time market analysis
+                <br/>
+                3. Autonomous trading decisions
+                <br/><br/>
+                Would you like to know more about any of these capabilities?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 입력 영역 */}
+        <div className="p-4 border-t border-gray-800/40">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Message Jenna..."
+              className="w-full bg-[#111113] rounded-xl px-4 py-3 pl-4 pr-12
+                       text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <button className="absolute right-3 top-1/2 -translate-y-1/2
+                           text-purple-500 hover:text-purple-400">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default function Chat() {
-    const { agentId } = useParams();
-    const [input, setInput] = useState("");
-    const [messages, setMessages] = useState<TextResponse[]>([]);
-
-    const mutation = useMutation({
-        mutationFn: async (text: string) => {
-            const res = await fetch(`/api/${agentId}/message`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    text,
-                    userId: "user",
-                    roomId: `default-room-${agentId}`,
-                }),
-            });
-            return res.json() as Promise<TextResponse[]>;
-        },
-        onSuccess: (data) => {
-            setMessages((prev) => [...prev, ...data]);
-        },
-    });
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!input.trim()) return;
-
-        // Add user message immediately to state
-        const userMessage: TextResponse = {
-            text: input,
-            user: "user",
-        };
-        setMessages((prev) => [...prev, userMessage]);
-
-        mutation.mutate(input);
-        setInput("");
-    };
-
-    return (
-        <div className="flex flex-col h-screen max-h-screen w-full">
-            <div className="flex-1 min-h-0 overflow-y-auto p-4">
-                <div className="max-w-3xl mx-auto space-y-4">
-                    {messages.length > 0 ? (
-                        messages.map((message, index) => (
-                            <div
-                                key={index}
-                                className={`flex ${
-                                    message.user === "user"
-                                        ? "justify-end"
-                                        : "justify-start"
-                                }`}
-                            >
-                                <div
-                                    className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                                        message.user === "user"
-                                            ? "bg-primary text-primary-foreground"
-                                            : "bg-muted"
-                                    }`}
-                                >
-                                    {message.text}
-                                </div>
-                            </div>
-                        ))
-                    ) : (
-                        <div className="text-center text-muted-foreground">
-                            No messages yet. Start a conversation!
-                        </div>
-                    )}
-                </div>
-            </div>
-
-            <div className="border-t p-4 bg-background">
-                <div className="max-w-3xl mx-auto">
-                    <form onSubmit={handleSubmit} className="flex gap-2">
-                        <Input
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            placeholder="Type a message..."
-                            className="flex-1"
-                            disabled={mutation.isPending}
-                        />
-                        <Button type="submit" disabled={mutation.isPending}>
-                            {mutation.isPending ? "..." : "Send"}
-                        </Button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    );
-}
+export default Chat;
