@@ -4,16 +4,26 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-white text-[#b11d85]">
       {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 bg-black/30 backdrop-blur-sm z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-white backdrop-blur-sm z-50">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Left side - Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/Leina.png" alt="Leina" className="w-8 h-8" />
-              <span className="text-lg font-medium">Leina: Your Learning Partner</span>
-            </Link>
+  <div className="relative">
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-75"></div>
+    <div className="relative">
+      <img
+        src="/Leina.png"
+        alt="Leina"
+        className="w-8 h-8 rounded-full border-1 border-purple-500/50 ring-2 ring-purple-500/20"
+      />
+      <div className="absolute bottom-0 right-0 w-2 h-2 bg-green-400 rounded-full ring-1 ring-[#111113]"></div>
+    </div>
+  </div>
+  <span className="text-lg font-medium">Leina: Your Learning Partner</span>
+</Link>
 
             {/* Right side - Navigation */}
             <div className="flex items-center space-x-8">
@@ -43,7 +53,7 @@ interface NavLinkProps {
 const NavLink = ({ icon, text, to }: NavLinkProps) => (
   <Link
     to={to}
-    className="flex items-center space-x-2 text-gray-400 hover:text-white transition-all opacity-80 hover:opacity-100"
+    className="flex items-center space-x-2 text-[#b11d85] hover:text-[#b11d85] transition-all opacity-80 hover:opacity-100"
   >
     {icon}
     <span className="text-sm">{text}</span>

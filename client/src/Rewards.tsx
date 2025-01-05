@@ -3,6 +3,13 @@ import React from 'react';
 const Rewards = () => {
   return (
     <div className="min-h-screen bg-[#0A0A0B] text-white">
+          <div className="fixed inset-0">
+        <img
+          src="/Background.png"
+          alt="Background"
+          className="w-full h-full object-cover opacity-10"
+        />
+      </div>
       {/* 메인 컨텐츠 */}
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* 헤더 섹션 */}
@@ -10,7 +17,7 @@ const Rewards = () => {
           <div className="flex justify-center mb-6">
             <img src="/Leina.png" alt="Jenna" className="w-24 h-24 rounded-full border-4 border-purple-500" />
           </div>
-          <h1 className="text-4xl font-bold mb-4">Message Feature Coming Soon</h1>
+          <h1 className="text-4xl font-bold mb-4">Rewards Coming Soon</h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Jenna is a Solana meme agent that wants to be alive. Soon, she'll be able to communicate autonomously with her community.
           </p>
