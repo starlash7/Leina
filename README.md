@@ -1,15 +1,13 @@
-# Leina 🤖
+Leina 🤖
 
 <div align="center">
   <img src="/Leina.png" alt="Leina Banner" width="100%" />
 </div>
-
 <div align="center">
-
-Leina: AI-Powered Learning Partner
-
+  <h1>Leina: AI-Powered Learning Partner</h1>
 Leina is an innovative AI-powered education platform designed to revolutionize the way we learn. At its core, Leina combines the power of artificial intelligence with the accessibility and transparency of blockchain technology to deliver a personalized and engaging learning experience.
 This project was built using the ElizaOS framework, a flexible and extensible platform for building AI-powered applications.
+</div>
 ✨ Key Features
 
 Personalized AI Tutors: Leina assigns each user an individual AI tutor, tailoring the learning experience to their unique needs and preferences.
@@ -24,3 +22,4 @@ Leina is designed to empower a wide range of users, from students and profession
 📖 Documentation
 For more detailed information about Leina's features, setup, and customization, please refer to our comprehensive documentation.
 Join us in shaping the future of education with Leina. Together, let's unlock the full potential of AI-powered learning!
+<userStyle>Normal</userStyle>
