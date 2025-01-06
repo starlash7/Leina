@@ -12,7 +12,7 @@ const Layout = () => {
             {/* Left side - Logo */}
             <Link to="/" className="flex items-center space-x-2">
   <div className="relative">
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-75"></div>
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-yellow-500 rounded-full opacity-75"></div>
     <div className="relative">
       <img
         src="/Leina.png"
