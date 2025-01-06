@@ -59,10 +59,10 @@ function App() {
 
           {/* 서브타이틀 */}
           <div className="space-y-2 mb-16">
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-white">
               Leina is an AI tutor that helps you learn.
             </p>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-white">
               powered by AI, built for education.
             </p>
           </div>

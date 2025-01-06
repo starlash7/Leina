@@ -22,7 +22,7 @@ const Layout = () => {
       <div className="absolute bottom-0 right-0 w-2 h-2 bg-green-400 rounded-full ring-1 ring-[#111113]"></div>
     </div>
   </div>
-  <span className="text-lg font-medium">Leina: Your Learning Partner</span>
+  <span className="text-lg font-medium">AI Agent: Leina</span>
 </Link>
 
             {/* Right side - Navigation */}
