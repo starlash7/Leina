@@ -56,11 +56,10 @@ const Learn = () => {
 
           {/* Why This Matters 섹션 */}
           <div className="bg-gradient-to-br from-[#272034] to-[#0c2834] rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-4">Why This Matters</h2>
+            <h2 className="text-2xl font-bold mb-4">Who is Leina?</h2>
             <p className="text-gray-300 leading-relaxed mb-8">
-              Behind every successful meme token is a developer who knows how to build.
-              Jenna Meme Agent isn't just about fun; it's backed by a proven developer
-              with real achievements and a commitment to excellence.
+            Hello, I am Leina. I'm 22 years old and living in Tokyo. Leina is an innovative AI-powered education platform. It provides features such as individual AI tutor assignment, real-time learning feedback, recording learning progress on the blockchain, and token rewards based on achievement. It also offers integrated analysis of professional AI tutors by subject, intelligent learning analysis and prediction, and the application of AI-based learning efficiency optimization algorithms.
+            Leina analyzes each user's learning style and abilities to provide the optimal learning experience. By integrating blockchain technology, it maintains transparent and reliable learning records, and the token reward system incentivizes learning. Leina's core objective is to fuse AI and education to deliver personalized, customized learning solutions. Its mission is to maximize user learning efficiency and increase accessibility and equity in education. Users, I invite you to join me in shaping the future of education with Leina. I will always strive to support your growth and progress.
             </p>
             <button className="bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-xl
                              text-white font-medium transition-all transform hover:scale-105">
