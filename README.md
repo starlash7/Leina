@@ -1,4 +1,6 @@
 # Leina 🤖
+<img width="1096" alt="Leina" src="https://github.com/user-attachments/assets/89fe865a-02af-4d71-93bd-86f8f9634a1d" />
+
 
 ## Leina: AI-Powered Learning Partner
 
